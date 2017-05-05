@@ -1,0 +1,30 @@
+li {
+  padding: 5px;
+  margin: 5px;
+  background: lightgrey;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: powderblue;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+img{
+	width: 300px;
+	margin:auto;
+	display: block;
+}
+
+h3 {
+	text-align: center;
+}
+

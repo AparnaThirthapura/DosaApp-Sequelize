@@ -1,0 +1,78 @@
+<div class="container">
+
+  <div class="row" class="jumbotron">
+    <h3>Dosa Shop</h3>
+  </div>
+  <img src="../assets/images/dosaImage.jpg">
+
+  <!-- <div class="row">
+    <div class="col-lg-5">
+    <h3>Dosa Shop</h3>
+    <img src="../assets/images/dosaImage.jpg">
+    </div>
+  </div> -->
+
+  <div class="row">
+    <h4>Add a Dosa</h4>
+      <form class="create-update-form" action="/" method="POST">
+
+        <div class="form-group">
+          <label for="dosa">Dosa Name:</label>
+          <input type="text" id="dosa" name="dosaName">
+        </div>
+
+        <button type="submit">Add Dosa</button>
+      </form>
+  </div>
+
+  <div class="row">
+    <div class="panel col-lg-5 not-savoured">
+    
+      <h4>Dosas that are to be savoured</h4> 
+
+     
+        {{#each dosas}}
+          {{#unless this.savoured}}
+
+            <pre>{{this.id}} . {{this.dosaName}}</pre>  
+              
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="savoured" value="true">
+              <button type="submit">Savour-It</button>
+            </form>
+
+          
+          {{/unless}}
+        {{/each}}
+    
+    </div>
+
+    <div class="panel col-lg-5 savoured">
+      
+      <h4>Dosas that are savoured</h4> 
+
+     
+          {{#each dosas}}
+            {{#if this.savoured}}
+              
+              <pre>{{this.id}} . {{this.dosaName}}</pre>  
+
+              <!-- <form action="/{{this.id}}?_method=DELETE" method="POST">
+                <input type="hidden" name="savoured" value="false">
+                <button type="submit" >Savoured</button>
+              </form>
+ -->
+              
+            {{/if}}
+          {{/each}}
+       
+    </div>
+      
+  </div>
+
+</div>
+
+
+
+
+

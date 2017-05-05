@@ -1,1 +1,1 @@
-# DosaApp-Sequelize
+# DosaApp
